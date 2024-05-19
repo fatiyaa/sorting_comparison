@@ -80,7 +80,7 @@ int main()
     {
         clock_t start = clock();
 
-        string file_name = "imput/input_" + to_string(seq_length[i]) + ".txt";
+        string file_name = "input/input_" + to_string(seq_length[i]) + ".txt";
         FILE *file = fopen(file_name.c_str(), "r");
         if (file == NULL)
         {

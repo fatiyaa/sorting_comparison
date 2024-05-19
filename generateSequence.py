@@ -7,7 +7,7 @@ for i in length:
     numbers = random.sample(range(1, 10000), i)
 
     # Simpan hasil ke file teks
-    with open(f'input_{i}.txt', 'w') as f:
+    with open(f'input/input_{i}.txt', 'w') as f:
         for number in numbers:
             f.write(f"{number}\n")
 

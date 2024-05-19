@@ -35,7 +35,7 @@ int main()
   // --- START
   int seq_length[5] = {1000, 2000, 3000, 4000, 5000};
 
-  string time_file_name = "time/mergeSort_time.txt";
+  string time_file_name = "time/quickSort_time.txt";
   FILE *time_file = fopen(time_file_name.c_str(), "w");
   if (time_file == NULL)
   {
