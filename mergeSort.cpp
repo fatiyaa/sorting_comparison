@@ -68,7 +68,7 @@ int main()
 
     int seq_length[5] = {1000, 2000, 3000, 4000, 5000};
 
-    string time_file_name = "mergeSort_time.txt";
+    string time_file_name = "time/mergeSort_time.txt";
     FILE *time_file = fopen(time_file_name.c_str(), "w");
     if (time_file == NULL)
     {
@@ -80,7 +80,7 @@ int main()
     {
         clock_t start = clock();
 
-        string file_name = "input_" + to_string(seq_length[i]) + ".txt";
+        string file_name = "imput/input_" + to_string(seq_length[i]) + ".txt";
         FILE *file = fopen(file_name.c_str(), "r");
         if (file == NULL)
         {
