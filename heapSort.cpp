@@ -39,7 +39,7 @@ void heapSort(int arr[], int N)
 int main()
 {
     // --- START
-    int seq_length[5] = {10000, 20000, 30000, 40000, 50000};
+    int seq_length[20] = {1000, 2000, 3000, 4000, 5000, 10000, 20000, 30000, 40000, 50000, 1000, 2000, 3000, 4000, 5000, 1000, 2000, 3000, 4000, 5000};
 
     string time_file_name = "time/heapSort_time.txt";
     FILE *time_file = fopen(time_file_name.c_str(), "w");
@@ -49,16 +49,40 @@ int main()
         return 1;
     }
 
-    for (int i = 0; i < 5; i++)
+    for (int i = 0; i < 20; i++)
     {
-        string file_name = "input/input_" + to_string(seq_length[i]) + ".txt";
-        FILE *file = fopen(file_name.c_str(), "r");
-        if (file == NULL)
+        string file_name;
+        FILE *file;
+        if (i < 10)
         {
-            perror("err");
-            return 1;
+            file_name = "input/input_" + to_string(seq_length[i]) + ".txt";
+            file = fopen(file_name.c_str(), "r");
+            if (file == NULL)
+            {
+                perror("err");
+                return 1;
+            }
         }
-
+        else if (i < 15)
+        {
+            file_name = "input/sorted_input_" + to_string(seq_length[i]) + ".txt";
+            file = fopen(file_name.c_str(), "r");
+            if (file == NULL)
+            {
+                perror("err");
+                return 1;
+            }
+        }
+        else
+        {
+            file_name = "input/back_input_" + to_string(seq_length[i]) + ".txt";
+            file = fopen(file_name.c_str(), "r");
+            if (file == NULL)
+            {
+                perror("err");
+                return 1;
+            }
+        }
         // --- BACA INPUT DARI FILE
         vector<int> angka_list;
         int angka;
@@ -95,7 +119,12 @@ int main()
         // --- FINISH
         double duration = double(end - start) / CLOCKS_PER_SEC;
 
-        std::cout << "heapSort is done" << std::endl;
+        if (i < 10)
+            cout << "heapSort Random input ";
+        else if (i < 15)
+            cout << "heapSort Ascending input ";
+        else
+            cout << "heapSort Descending input ";
         std::cout << "time " << seq_length[i] << " sequence: " << duration << " seconds" << std::endl;
 
         fprintf(time_file, "%lf\n", duration);

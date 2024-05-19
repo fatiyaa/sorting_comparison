@@ -1,6 +1,6 @@
 import random
 
-length = [10000, 20000, 30000, 40000, 50000]
+length = [1000, 2000, 3000, 4000, 5000, 10000, 20000, 30000, 40000, 50000]
 # Generate angka acak dari 1 hingga 1000 tanpa ada yang sama
 
 for i in length:

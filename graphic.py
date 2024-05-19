@@ -2,7 +2,7 @@ import matplotlib.pyplot as plt
 import pandas as pd
 
 # Nama-nama file yang berisi data waktu
-file_names = ["time/heapSort_time.txt", "time/insertionSort_time.txt", "time/mergeSort_time.txt", "time/quickSort_time.txt"]
+file_names = ["time/heapSort_time.txt", "time/mergeSort_time.txt","time/insertionSort_time.txt", "time/quickSort_time.txt", "time/countingSort_time.txt"]
 
 # List untuk menyimpan data dari setiap file
 all_data = []
@@ -12,7 +12,8 @@ for file_name in file_names:
         data = [float(line.strip()) for line in file]
         all_data.append(data)
 
-letters = ['1000', '2000', '3000', '4000', '50000']
+# letters = ['1000', '2000', '3000', '4000', '5000', '10000', '20000', '30000', '40000', '50000']
+letters = ['1000', '2000', '3000', '4000', '5000']
 
 # Membuat plot
 plt.figure(figsize=(10, 6))
