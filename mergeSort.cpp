@@ -66,7 +66,7 @@ int main()
 {
     // --- START
 
-    int seq_length[5] = {1000, 2000, 3000, 4000, 5000};
+    int seq_length[5] = {10000, 20000, 30000, 40000, 50000};
 
     string time_file_name = "time/mergeSort_time.txt";
     FILE *time_file = fopen(time_file_name.c_str(), "w");

@@ -1,10 +1,10 @@
 import random
 
-length = [1000, 2000, 3000, 4000, 5000]
+length = [10000, 20000, 30000, 40000, 50000]
 # Generate angka acak dari 1 hingga 1000 tanpa ada yang sama
 
 for i in length:
-    numbers = random.sample(range(1, 10000), i)
+    numbers = random.sample(range(1, 100000), i)
 
     # Simpan hasil ke file teks
     with open(f'input/input_{i}.txt', 'w') as f:
