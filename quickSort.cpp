@@ -44,7 +44,6 @@ int main()
   }
   for (int i = 0; i < 5; i++)
   {
-    clock_t start = clock();
 
     string file_name = "input/input_" + to_string(seq_length[i]) + ".txt";
     FILE *file = fopen(file_name.c_str(), "r");
@@ -67,7 +66,9 @@ int main()
 
     // --- URUTKAN ANGKA MENGGUNAKAN INSERTION SORT
     int n = angka_list.size();
+    clock_t start = clock();
     quickSort(angka_list.data(), 0, n - 1);
+    clock_t end = clock();
 
     // --- OUTPUT KE FILE
     file_name = "output/output_quickSort_" + to_string(seq_length[i]) + ".txt";
@@ -86,7 +87,6 @@ int main()
     fclose(output_file);
 
     // --- FINISH
-    clock_t end = clock();
     double duration = double(end - start) / CLOCKS_PER_SEC;
 
     std::cout << "quickSort is done" << std::endl;
